@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>365 Days Challenge Tracker - Rudra Saraf</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>365 Projects</h1>
+        <div class="credits">Made by <strong>Rudra Saraf</strong></div>
+    </header>
+
+    <main>
+        <!-- Visual Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Counter Section -->
+        <section class="counter-display">
+            <div class="day-label">Current Day</div>
+            <div class="day-number" id="dayCount">1</div>
+            <div class="day-subtext">of 365</div>
+        </section>
+
+        <!-- Buttons -->
+        <section class="controls">
+            <button class="btn-dec" id="btnDec" aria-label="Previous Day">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+                Prev
+            </button>
+            <button class="btn-inc" id="btnInc" aria-label="Next Day">
+                Next
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+        </section>
+
+        <div style="text-align: center;">
+            <button class="btn-reset" id="btnReset">Restart Challenge</button>
+        </div>
+
+        <!-- Project Note Section -->
+        <section class="note-section">
+            <label class="note-label" for="projectNote">Day 1 Project / Thought:</label>
+            <textarea 
+                id="projectNote" 
+                class="note-input" 
+                rows="3" 
+                placeholder="What did you create today?"
+            ></textarea>
+            <div class="status-msg" id="saveMsg">Saved!</div>
+        </section>
+    </main>
+
+    <footer>
+        Keep building. Keep shipping.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
