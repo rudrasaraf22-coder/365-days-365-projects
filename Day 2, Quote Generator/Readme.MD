@@ -1,5 +1,6 @@
 Random Quote Generator
-Quote GeneratorMade By Rudra Saraf
+Quote Generator
+Made By Rudra Saraf
 
 A beautifully designed, responsive web application that generates random inspirational quotes. It features smooth animations, a clipboard copy feature, and a history log for previously viewed quotes.
 
