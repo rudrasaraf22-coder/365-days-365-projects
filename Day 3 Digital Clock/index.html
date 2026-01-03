@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock | Rudra Saraf</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="clock-container">
+        <!-- Time Zone Selector -->
+        <div class="controls">
+            <select id="timezone-select" aria-label="Select Time Zone">
+                <option value="local">📍 My Local Time</option>
+                <option value="UTC">🌐 UTC (Universal)</option>
+                <option value="America/New_York">🇺🇸 New York</option>
+                <option value="America/Los_Angeles">🇺🇸 Los Angeles</option>
+                <option value="Europe/London">🇬🇧 London</option>
+                <option value="Europe/Paris">🇫🇷 Paris</option>
+                <option value="Asia/Dubai">🇦🇪 Dubai</option>
+                <option value="Asia/Kolkata">🇮🇳 India</option>
+                <option value="Asia/Tokyo">🇯🇵 Tokyo</option>
+                <option value="Australia/Sydney">🇦🇺 Sydney</option>
+            </select>
+        </div>
+
+        <!-- Time Display -->
+        <div class="time" id="clock-display">
+            <span class="hours">00</span>
+            <span class="separator">:</span>
+            <span class="minutes">00</span>
+            <span class="seconds">00</span>
+        </div>
+
+        <!-- Date Display -->
+        <div class="date" id="date-display">
+            Loading Date...
+        </div>
+
+        <!-- Status Display (Sunrise/Sunset/Evening) -->
+        <div class="status" id="time-status">
+            --:--
+        </div>
+    </main>
+
+    <!-- Credits Section -->
+    <footer class="credits">
+        made by: <span class="author">Rudra Saraf</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
