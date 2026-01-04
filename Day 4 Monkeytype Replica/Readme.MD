@@ -31,3 +31,25 @@ To run this project on your local machine:
 
 ## 🎮 Controls
 - **Typing:** Starts the timer automatical
+
+## 🛠️ Getting Started Locally
+To run this project on your local machine:
+
+1. Clone or download the source files.
+2. Navigate to the project directory.
+3. Open `index.html` in any modern web browser.
+4. Start typing!
+
+## 🎮 Controls
+- **Typing:** Starts the timer automatically.
+- **Space:** Move to the next word.
+- **Backspace:** Correct errors within the current word.
+- **Tab:** Restart the test immediately.
+
+## 👤 Credits
+**Made by: Rudra Saraf**
+
+This project is a replica created for educational purposes and portfolio demonstration.
+
+---
+Built with ❤️ using HTML, CSS, and Vanilla JavaScript.
