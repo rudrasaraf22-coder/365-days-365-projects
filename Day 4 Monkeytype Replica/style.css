@@ -1,0 +1,329 @@
+:root {
+    /* Color Palette - Dark Mode Default */
+    --bg-color: #323437;
+    --main-color: #e2b714;
+    --sub-color: #646669;
+    --text-color: #d1d0c5;
+    --error-color: #ca4754;
+    --error-extra-color: #7e2a33;
+    
+    --caret-color: #e2b714; 
+    --font-main: 'Roboto Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none; /* Prevent text selection */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* --- Header --- */
+header {
+    width: 100%;
+    max-width: 1200px;
+    padding: 4rem 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand i {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* --- Configuration Bar --- */
+.config-bar {
+    background-color: rgba(0,0,0,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--sub-color);
+    margin-bottom: 2rem;
+}
+
+.config-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.config-btn {
+    background: none;
+    border: none;
+    color: var(--sub-color);
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: color 0.2s, background-color 0.2s;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.config-btn:hover {
+    color: var(--text-color);
+}
+
+.config-btn.active {
+    color: var(--main-color);
+    background-color: rgba(226, 183, 20, 0.1);
+}
+
+/* --- Typing Area --- */
+#game-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 140px; /* Fixed height to show ~3 lines */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    cursor: text;
+}
+
+/* Blur Overlay */
+#focus-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 52, 55, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+#focus-error.visible {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+#words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    width: 100%;
+    line-height: 1.5;
+    font-size: 1.5rem;
+    color: var(--sub-color);
+    padding: 10px;
+    transition: transform 0.25s ease; 
+}
+
+.word {
+    display: flex;
+    border-bottom: 2px solid transparent;
+}
+
+.letter {
+    position: relative;
+    transition: color 0.1s;
+}
+
+.letter.correct {
+    color: var(--text-color);
+}
+
+.letter.incorrect {
+    color: var(--error-color);
+}
+
+.letter.extra {
+    color: var(--error-extra-color);
+    opacity: 0.7;
+}
+
+/* The blinking cursor block */
+.letter.active::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 10%;
+    height: 80%;
+    width: 2px;
+    background-color: var(--caret-color);
+    animation: blink 1s infinite;
+}
+
+.letter.active {
+    color: var(--text-color);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* --- Live Stats --- */
+#live-stats {
+    margin-top: 3rem;
+    display: flex;
+    gap: 2rem;
+    font-size: 1.2rem;
+    color: var(--main-color);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#live-stats.visible {
+    opacity: 1;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--sub-color);
+    margin-bottom: 0.2rem;
+}
+
+/* --- Footer --- */
+footer {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    color: var(--sub-color);
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: var(--sub-color);
+    text-decoration: none;
+}
+
+/* --- Restart Button --- */
+#restart-btn {
+    position: absolute;
+    right: 2rem;
+    top: 5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--sub-color);
+    font-size: 1.5rem;
+    opacity: 0.3;
+    transition: all 0.2s;
+}
+
+#restart-btn:hover {
+    opacity: 1;
+    color: var(--text-color);
+    transform: rotate(90deg);
+}
+
+/* --- Results Modal --- */
+#results-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#results-screen.active {
+    display: flex;
+}
+
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.result-box h2 {
+    font-size: 4rem;
+    color: var(--main-color);
+}
+
+.result-box p {
+    color: var(--sub-color);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.secondary-stats {
+    display: flex;
+    gap: 2rem;
+    color: var(--sub-color);
+    font-size: 1.2rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--sub-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.8rem 2rem;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: var(--text-color);
+}
+
+.key-hint {
+    font-size: 0.8rem;
+    color: var(--sub-color);
+    margin-top: 1rem;
+    opacity: 0.6;
+}
