@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonkeyType Replica</title>
+    <!-- Import Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <i>MT</i>
+            <span>monkeytype</span>
+        </div>
+        <div id="restart-btn" title="Restart Test">↻</div>
+    </header>
+
+    <!-- Config Bar -->
+    <div class="config-bar">
+        <div class="config-group">
+            <span>time:</span>
+            <button class="config-btn" data-time="15">15</button>
+            <button class="config-btn active" data-time="30">30</button>
+            <button class="config-btn" data-time="60">60</button>
+        </div>
+        <div class="config-group">
+            <span>mode:</span>
+            <span style="color:var(--text-color)">words</span>
+        </div>
+    </div>
+
+    <!-- Game Area -->
+    <main id="game-wrapper">
+        <div id="focus-error">
+            <span>Click here to focus</span>
+        </div>
+        <div id="words">
+            <!-- Words injected via JS -->
+        </div>
+    </main>
+
+    <!-- Live Stats (Timer) -->
+    <div id="live-stats">
+        <div class="stat-item">
+            <span class="stat-label">time</span>
+            <span id="timer">30</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">wpm</span>
+            <span id="live-wpm">0</span>
+        </div>
+    </div>
+
+    <!-- Footer Credits -->
+    <footer>
+        <p>made by: Rudra Saraf</p>
+        <div class="key-hint">press <b>tab</b> to restart</div>
+    </footer>
+
+    <!-- Results Screen -->
+    <div id="results-screen">
+        <div class="results-container">
+            <div class="result-box">
+                <h2 id="res-wpm">0</h2>
+                <p>WPM</p>
+            </div>
+            <div class="result-box">
+                <h2 id="res-acc">0%</h2>
+                <p>acc</p>
+            </div>
+        </div>
+        
+        <div class="secondary-stats">
+            <span id="res-raw">raw: 0</span>
+            <span id="res-chars">characters: 0/0/0/0</span>
+        </div>
+        <br>
+        <div class="action-buttons">
+            <button class="btn-primary" id="next-test-btn"><i class="fa fa-refresh"></i> next test</button>
+        </div>
+    </div>
+
+    <!-- Link to JS -->
+    <script src="script.js"></script>
+</body>
+</html>
