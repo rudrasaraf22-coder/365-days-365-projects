@@ -1,0 +1,159 @@
+:root {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --accent-green: #00e676;
+    --accent-red: #ff5252;
+    --accent-amber: #ffab40;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 50% 0%, #2c2c2c 0%, #121212 70%);
+    color: var(--text-main);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.stopwatch-container {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid #333;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.time-display {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: var(--text-main);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    font-variant-numeric: tabular-nums;
+}
+
+.milliseconds {
+    font-size: 1.8rem;
+    color: var(--text-muted);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+button {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Specific Button Styles */
+.btn-start {
+    background-color: var(--accent-green);
+    color: #000;
+}
+.btn-start:hover:not(:disabled) {
+    background-color: #00c853;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.4);
+}
+
+.btn-pause {
+    background-color: var(--accent-amber);
+    color: #000;
+}
+.btn-pause:hover:not(:disabled) {
+    background-color: #ff9100;
+    box-shadow: 0 0 15px rgba(255, 171, 64, 0.4);
+}
+
+.btn-reset {
+    background-color: var(--accent-red);
+    color: #fff;
+}
+.btn-reset:hover:not(:disabled) {
+    background-color: #ff1744;
+    box-shadow: 0 0 15px rgba(255, 82, 82, 0.4);
+}
+
+.instructions {
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.credits {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.credits span {
+    color: var(--accent-green);
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .time-display {
+        font-size: 2.5rem;
+    }
+    .milliseconds {
+        font-size: 1.2rem;
+    }
+    button {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        min-width: 80px;
+    }
+}
