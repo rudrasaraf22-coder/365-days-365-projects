@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Stopwatch</title>
+    
+    <!-- Link to CSS File -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="stopwatch-container">
+        <h1>Stopwatch</h1>
+
+        <!-- Time Display -->
+        <div class="time-display" id="display">
+            00:00<span class="milliseconds">.00</span>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="btn-start" id="startBtn">Start</button>
+            <button class="btn-pause" id="pauseBtn" disabled>Pause</button>
+            <button class="btn-reset" id="resetBtn" disabled>Reset</button>
+        </div>
+
+        <p class="instructions">Press <b>Space</b> to Toggle • <b>Esc</b> to Reset</p>
+
+        <!-- Credits -->
+        <div class="credits">
+            Made By <span>Rudra Saraf</span>
+        </div>
+    </main>
+
+    <!-- Link to JS File -->
+    <script src="script.js"></script>
+</body>
+</html>
