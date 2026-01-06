@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator</title>
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Password Generator 🔐</h1>
+            <p class="subtitle">Create strong and secure passwords instantly</p>
+        </header>
+
+        <!-- Password Display -->
+        <div class="password-display-container">
+            <input type="text" id="password-output" placeholder="Click Generate" readonly>
+            <button class="copy-btn" id="copy-btn" title="Copy to Clipboard">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Strength Meter -->
+        <div class="strength-meter">
+            <div class="strength-bar" id="strength-bar"></div>
+        </div>
+        <div class="strength-text" id="strength-text">Strength: -</div>
+
+        <!-- Controls -->
+        <div class="controls">
+            
+            <!-- Length Slider -->
+            <div class="length-control">
+                <div class="label-row">
+                    <label for="length-slider">Password Length</label>
+                    <span id="length-value">12</span>
+                </div>
+                <input type="range" id="length-slider" min="4" max="32" value="12">
+            </div>
+
+            <!-- Character Options -->
+            <div class="options-grid">
+                <label class="checkbox-wrapper">
+                    <input type="checkbox" id="include-uppercase" checked>
+                    Uppercase (A-Z)
+                </label>
+                <label class="checkbox-wrapper">
+                    <input type="checkbox" id="include-lowercase" checked>
+                    Lowercase (a-z)
+                </label>
+                <label class="checkbox-wrapper">
+                    <input type="checkbox" id="include-numbers" checked>
+                    Numbers (0-9)
+                </label>
+                <label class="checkbox-wrapper">
+                    <input type="checkbox" id="include-symbols" checked>
+                    Symbols (!@#)
+                </label>
+            </div>
+
+            <!-- Error Msg -->
+            <div class="error-msg" id="error-msg">Please select at least one option.</div>
+
+            <!-- Generate Button -->
+            <button class="generate-btn" id="generate-btn">Generate Password</button>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Password copied to clipboard! ✅</div>
+
+    <!-- JS File Link -->
+    <script src="script.js"></script>
+</body>
+</html>
