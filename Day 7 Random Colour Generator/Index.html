@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Random Color</h1>
+            <p class="subtitle">Hit generate for a fresh look!</p>
+        </header>
+
+        <section class="color-display-wrapper">
+            <span class="color-label">HEX Code</span>
+            <span id="colorText" class="color-code">#FFFFFF</span>
+        </section>
+
+        <section class="btn-group">
+            <button id="generateBtn" class="btn-generate">
+                Generate 🎨
+            </button>
+            <button id="copyBtn" class="btn-copy" title="Copy to clipboard">
+                Copy 📋
+            </button>
+        </section>
+
+        <footer class="credits">
+            Made by <span>Rudra Saraf</span>
+        </footer>
+    </main>
+
+    <!-- Toast Notification Element -->
+    <div id="toast" class="toast">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>Color copied!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
