@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light / Dark Theme Toggle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <!-- Header with Toggle Button -->
+        <header>
+            <h1>Theme Switcher</h1>
+            <button id="themeToggle" class="toggle-btn" aria-label="Toggle Dark Mode">
+                <!-- Icon will be inserted by JS initially -->
+                <span class="icon">☀️</span>
+            </button>
+        </header>
+
+        <!-- Content Section to demonstrate colors -->
+        <section class="content">
+            <h2>Current Theme: <span id="themeLabel">Light</span></h2>
+            <p>
+                This is a reusable skill. Changing themes isn't just about looks; it's about user comfort and accessibility.
+            </p>
+            <p>
+                Click the button above to switch between Light and Dark modes. The preference is saved, so if you refresh, it remembers your choice!
+            </p>
+            
+            <div class="demo-box">
+                <h3>Demo Box</h3>
+                <p>Notice how the background and text color invert smoothly.</p>
+                <a href="#" class="demo-link">This is a link</a>
+            </div>
+        </section>
+
+        <footer class="credits">
+            Made by <span>Rudra Saraf</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
