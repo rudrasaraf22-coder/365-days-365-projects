@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word & Character Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Word & Character Counter</h1>
+            <p class="subtitle">Simple logic for powerful insights 🧠</p>
+        </header>
+
+        <section class="input-section">
+            <textarea 
+                id="textInput" 
+                placeholder="Start typing or paste your text here..." 
+                spellcheck="false"
+            ></textarea>
+        </section>
+
+        <section class="stats-container">
+            <div class="stat-box">
+                <span class="stat-icon">📝</span>
+                <div class="stat-content">
+                    <span id="charCount" class="stat-number">0</span>
+                    <span class="stat-label">Characters</span>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <span class="stat-icon">📚</span>
+                <div class="stat-content">
+                    <span id="wordCount" class="stat-number">0</span>
+                    <span class="stat-label">Words</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="credits">
+            Made by <span>Rudra Saraf</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
