@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 12 — Age Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container" aria-labelledby="title">
+    <h1 id="title">Age Calculator</h1>
+
+    <form id="age-form" onsubmit="return false;" aria-describedby="desc">
+      <p id="desc" class="sr-only">Enter your date of birth and press Calculate to find your age in years, months and days.</p>
+
+      <label for="dob">Date of birth</label>
+      <input id="dob" name="dob" type="date" aria-required="true" />
+
+      <div class="actions">
+        <button id="calc-btn" type="button">Calculate</button>
+        <button id="clear-btn" type="button" class="secondary">Clear</button>
+      </div>
+    </form>
+
+    <section id="result" aria-live="polite" class="result hidden">
+      <h2>Result</h2>
+      <div class="age-grid">
+        <div>
+          <span class="num" id="years">—</span>
+          <span class="label">Years</span>
+        </div>
+        <div>
+          <span class="num" id="months">—</span>
+          <span class="label">Months</span>
+        </div>
+        <div>
+          <span class="num" id="days">—</span>
+          <span class="label">Days</span>
+        </div>
+      </div>
+      <p id="notes" class="notes"></p>
+    </section>
+
+    <p class="footer">Tip: You can type a date or pick one from the date picker. Press Enter after selecting to calculate.</p>
+
+    <p class="credits">Made by Rudra Saraf</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
